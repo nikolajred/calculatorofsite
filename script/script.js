@@ -1,4 +1,18 @@
 // 'use strict';
+const DATA = {
+    whichSite: ["одностраничный сайт", "многостраничный сайт", "интернет магазин"],
+    price: [4000, 8000, 26000],
+    desktopTemplates: [50, 40, 30],
+    adapt: 20,
+    mobileTemplates: 15,
+    editable: 10,
+    metrikaYandex: [500, 1000, 2000],
+    analyticsGoogle: [850, 1350, 3000],
+    sendOrder: 500,
+    deadline: [[2, 7], [3, 10], [7, 14]],
+    deadlinePearcent: [20, 17, 15]
+
+};
 
 const startButton = document.querySelector('.start-button'),
     firstScreen = document.querySelector('.first-screen'),
@@ -31,6 +45,8 @@ function handlerCallBackForm(event){
         //     hideElements(fastRange);
         // }
         target.checked ? showElements(fastRange) : hideElements(fastRange);
+    }if(target.classList.contains('calc-handler')){
+        priceCalculation(target);
     }
 
 }
